@@ -1,8 +1,10 @@
 const express = require('express');
 const AppError = require('./utils/AppError');
+const routes = require('./api/routes/index');
 
 const app = express();
 app.use(express.json());
+app.use(routes);
 
 app.use((error, request, response, next) => {
   if (error instanceof AppError) {
