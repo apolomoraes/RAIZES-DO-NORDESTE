@@ -1,4 +1,4 @@
 class AuthController {
-  async cerate(req, res) { }
+  async create(req, res) { }
 }
 module.exports = AuthController

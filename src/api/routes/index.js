@@ -7,7 +7,7 @@ const unidadesRoutes = require("./unidades.routes")
 const produtosRoutes = require("./produtos.routes")
 const estoqueRoutes = require("./estoque.routes")
 const pedidosRoutes = require("./pedidos.routes")
-const pagamentoRoutes = require("./pagamento.routes")
+const pagamentoRoutes = require("./pagamentos.routes")
 const fidelidadeRoutes = require("./fidelidade.routes")
 
 
