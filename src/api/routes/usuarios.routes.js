@@ -7,6 +7,6 @@ const usuariosController = new UsuariosController()
 
 usuariosRoutes.post("/", usuariosController.create)
 usuariosRoutes.get("/:id", authMiddleware, usuariosController.show)
-usuariosRoutes.put("/:id", authMiddleware, usuariosController.update)
+usuariosRoutes.put("/", authMiddleware, usuariosController.update)
 
 module.exports = usuariosRoutes

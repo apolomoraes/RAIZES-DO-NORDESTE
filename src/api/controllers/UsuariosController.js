@@ -16,7 +16,7 @@ class UsuarioController {
   }
 
   async update(req, res) {
-    const { id } = req.params
+    const id = req.user.id
     const { nome, email, password, old_password } = req.body
     const service = new UsuariosService()
     await service.update({ id: Number(id), nome, email, password, old_password })
