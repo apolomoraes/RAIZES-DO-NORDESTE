@@ -71,6 +71,14 @@ class PagamentoService {
           valor: pedido.valor_total
         })
       })
+
+      const FidelidadeService = require("./FidelidadeService")
+      const fidelidadeService = new FidelidadeService()
+      await fidelidadeService.registrar({
+        cliente_id: pedido.cliente_id,
+        pedido_id,
+        valor_total: pedido.valor_total
+      })
     }
 
     return {
