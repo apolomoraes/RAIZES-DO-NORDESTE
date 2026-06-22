@@ -1,0 +1,649 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Raizes do Nordeste
+meta:
+  id: wrk_e947e75cb0d04ed2966024efd0d2c5e3
+  created: 1781806349050
+  modified: 1781806349050
+  description: ""
+collection:
+  - name: Usuarios
+    meta:
+      id: fld_afc934eb3b664e2086ab9c7088fc5a6f
+      created: 1781806373939
+      modified: 1781806373939
+      sortKey: -1781806373939
+      description: ""
+    children:
+      - url: http://localhost:3000/usuarios
+        name: Criar usuário
+        meta:
+          id: req_07a962e3897a4fa3bb916bcdf3100f76
+          created: 1781806355479
+          modified: 1782163079568
+          isPrivate: false
+          description: ""
+          sortKey: -1781806377073
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "nome": "adm",
+              "email": "adm@email.com",
+              "password": "123456",
+            	"role": "admin"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/usuarios/1
+        name: Buscar usuário por id
+        meta:
+          id: req_95063d7d32124affb27aa1b89e7733f4
+          created: 1781806606440
+          modified: 1781808199121
+          isPrivate: false
+          description: ""
+          sortKey: -1781806606440
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50ZSIsImlhdCI6MTc4MTgwODE3MiwiZXhwIjoxNzgzMTA0MTcyLCJzdWIiOiIxIn0.dh3KBp1g5F5T0h5YkT7J-cYuPmdHSDR26CBCE8T-AdA
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Login
+    meta:
+      id: fld_46d983c2ea4a4f80bd17ead60eb0be23
+      created: 1781807589655
+      modified: 1781807589655
+      sortKey: -1781807589655
+      description: ""
+    children:
+      - url: http://localhost:3000/auth/login
+        name: Auth/Login
+        meta:
+          id: req_d14ad1d78e6d4bf9aa947b098646ddce
+          created: 1781807592839
+          modified: 1782167174481
+          isPrivate: false
+          description: ""
+          sortKey: -1781807592839
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "email": "admin@raizes.com",
+              "password": "123456"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Unidades
+    meta:
+      id: fld_d0e8190beb7e4bc7b9ef5ee6b646c088
+      created: 1782162388917
+      modified: 1782162388917
+      sortKey: -1782162388917
+      description: ""
+    children:
+      - url: http://localhost:3000/unidades
+        name: Criar
+        meta:
+          id: req_a3817fc99f10418eb60a9278646c7719
+          created: 1782162391647
+          modified: 1782163398756
+          isPrivate: false
+          description: ""
+          sortKey: -1782162391647
+        method: POST
+        body:
+          mimeType: application/json
+          text: '{ "nome": "Unidade Teste", "endereco": "Rua X", "cidade": "Recife",
+            "estado": "PE" }'
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3ODIxNjMwOTgsImV4cCI6MTc4MzQ1OTA5OCwic3ViIjoiMiJ9.t56UoA7YjfvSs3cXKVMw7e3s6_M1oyYtFlBI7vWzjmE
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/unidades/2
+        name: listar
+        meta:
+          id: req_27b3bc81cf504438b92f66b2fc172b9c
+          created: 1782162515322
+          modified: 1782163547047
+          isPrivate: false
+          description: ""
+          sortKey: -1782162515322
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Produtos
+    meta:
+      id: fld_5a07a60e994148f79ecbe3e235b2ae84
+      created: 1782163358175
+      modified: 1782163358175
+      sortKey: -1782163358175
+      description: ""
+    children:
+      - url: http://localhost:3000/produtos
+        name: Criar
+        meta:
+          id: req_46e71c1f247e42e9beace4215336308e
+          created: 1782163362653
+          modified: 1782163976930
+          isPrivate: false
+          description: ""
+          sortKey: -1782163362653
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "nome": "Tapioca Nordestina",
+              "descricao": "Tapioca recheada com queijo coalho",
+              "preco": 12.50,
+              "categoria": "tapioca",
+              "disponivel_junino": false,
+              "unidades": [1]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3ODIxNjMwOTgsImV4cCI6MTc4MzQ1OTA5OCwic3ViIjoiMiJ9.t56UoA7YjfvSs3cXKVMw7e3s6_M1oyYtFlBI7vWzjmE
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/produtos/1
+        name: Listar
+        meta:
+          id: req_5579379f2ffe4501b5877a2c816d0881
+          created: 1782163478362
+          modified: 1782163967609
+          isPrivate: false
+          description: ""
+          sortKey: -1782163478362
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/produtos/1
+        name: Deletar
+        meta:
+          id: req_f48a320221b64bd58c24376d465bed32
+          created: 1782163626861
+          modified: 1782163680157
+          isPrivate: false
+          description: ""
+          sortKey: -1782163626861
+        method: DELETE
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3ODIxNjMwOTgsImV4cCI6MTc4MzQ1OTA5OCwic3ViIjoiMiJ9.t56UoA7YjfvSs3cXKVMw7e3s6_M1oyYtFlBI7vWzjmE
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Estoque
+    meta:
+      id: fld_2a9298891dae4bb3a31af5e33bc2beb0
+      created: 1782163913893
+      modified: 1782163913893
+      sortKey: -1782163913893
+      description: ""
+    children:
+      - url: http://localhost:3000/estoque/entrada
+        name: Entrada
+        meta:
+          id: req_6af4ee631ae94a388c8178e877d44df5
+          created: 1782163922253
+          modified: 1782164036769
+          isPrivate: false
+          description: ""
+          sortKey: -1782163922253
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "produto_id": 3,
+              "unidade_id": 1,
+              "quantidade": 50,
+              "motivo": "Reposição semanal"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3ODIxNjMwOTgsImV4cCI6MTc4MzQ1OTA5OCwic3ViIjoiMiJ9.t56UoA7YjfvSs3cXKVMw7e3s6_M1oyYtFlBI7vWzjmE
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/estoque/saida
+        name: Saida
+        meta:
+          id: req_b91ec088f8594533845fa6e4ee69dc6f
+          created: 1782164027806
+          modified: 1782164144603
+          isPrivate: false
+          description: ""
+          sortKey: -1782164027806
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "produto_id": 3,
+              "unidade_id": 1,
+              "quantidade": 999,
+              "motivo": "Venda balcão"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3ODIxNjMwOTgsImV4cCI6MTc4MzQ1OTA5OCwic3ViIjoiMiJ9.t56UoA7YjfvSs3cXKVMw7e3s6_M1oyYtFlBI7vWzjmE
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/estoque/20
+        name: Buscar por unidade
+        meta:
+          id: req_cc226be4a1f24f9895be447f4e5cc34d
+          created: 1782164139043
+          modified: 1782164522532
+          isPrivate: false
+          description: ""
+          sortKey: -1782164139043
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3ODIxNjMwOTgsImV4cCI6MTc4MzQ1OTA5OCwic3ViIjoiMiJ9.t56UoA7YjfvSs3cXKVMw7e3s6_M1oyYtFlBI7vWzjmE
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Pedidos
+    meta:
+      id: fld_9916663a88474d7d95d2efce4057ba90
+      created: 1782164510099
+      modified: 1782164510099
+      sortKey: -1782164510099
+      description: ""
+    children:
+      - url: http://localhost:3000/pedidos
+        name: Criar pedido
+        meta:
+          id: req_4a90098b203840ec9915b22e7cfba280
+          created: 1782164515165
+          modified: 1782165129745
+          isPrivate: false
+          description: ""
+          sortKey: -1782164515165
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "unidade_id": 1,
+              "canal_pedido": "TOTEM",
+              "itens": [{ "produto_id": 3, "quantidade": 2 }]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3ODIxNjMwOTgsImV4cCI6MTc4MzQ1OTA5OCwic3ViIjoiMiJ9.t56UoA7YjfvSs3cXKVMw7e3s6_M1oyYtFlBI7vWzjmE
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/pedidos?canal_pedido=APP
+        name: Listar
+        meta:
+          id: req_f9fe69d5187d4ee987cc22516c5b3b24
+          created: 1782164658379
+          modified: 1782164748491
+          isPrivate: false
+          description: ""
+          sortKey: -1782164658379
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3ODIxNjMwOTgsImV4cCI6MTc4MzQ1OTA5OCwic3ViIjoiMiJ9.t56UoA7YjfvSs3cXKVMw7e3s6_M1oyYtFlBI7vWzjmE
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/pedidos/1/status
+        name: Atualizar status
+        meta:
+          id: req_587225d0224142069dbaddada03c0b31
+          created: 1782164740354
+          modified: 1782164799087
+          isPrivate: false
+          description: ""
+          sortKey: -1782164740354
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "status": "EM_PREPARO"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3ODIxNjMwOTgsImV4cCI6MTc4MzQ1OTA5OCwic3ViIjoiMiJ9.t56UoA7YjfvSs3cXKVMw7e3s6_M1oyYtFlBI7vWzjmE
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/pedidos/1/cancelar
+        name: Cancelar
+        meta:
+          id: req_528b5ffc4aa84b2ea86c699ebaf761d7
+          created: 1782164801497
+          modified: 1782165094665
+          isPrivate: false
+          description: ""
+          sortKey: -1782164801497
+        method: PATCH
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3ODIxNjMwOTgsImV4cCI6MTc4MzQ1OTA5OCwic3ViIjoiMiJ9.t56UoA7YjfvSs3cXKVMw7e3s6_M1oyYtFlBI7vWzjmE
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Pagamento
+    meta:
+      id: fld_4d586eee44794afe9b1218d725552167
+      created: 1782165039346
+      modified: 1782165039346
+      sortKey: -1782165039346
+      description: ""
+    children:
+      - url: http://localhost:3000/pagamento/solicitar
+        name: Solicitar pagamento
+        meta:
+          id: req_d965e07029464c338666a737abc15a3c
+          created: 1782165043552
+          modified: 1782166684452
+          isPrivate: false
+          description: ""
+          sortKey: -1782165043552
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "pedido_id": 12,
+              "forma_pagamento": "PIX"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3ODIxNjMwOTgsImV4cCI6MTc4MzQ1OTA5OCwic3ViIjoiMiJ9.t56UoA7YjfvSs3cXKVMw7e3s6_M1oyYtFlBI7vWzjmE
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/pagamento/5
+        name: Consultar pagamento
+        meta:
+          id: req_f11513b7c0124d8b871d20c15708f1ad
+          created: 1782165332189
+          modified: 1782165468835
+          isPrivate: false
+          description: ""
+          sortKey: -1782165332189
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3ODIxNjMwOTgsImV4cCI6MTc4MzQ1OTA5OCwic3ViIjoiMiJ9.t56UoA7YjfvSs3cXKVMw7e3s6_M1oyYtFlBI7vWzjmE
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Fidelidade
+    meta:
+      id: fld_6c8a28424e1a4e168a16b88cf36217a7
+      created: 1782165746664
+      modified: 1782165746664
+      sortKey: -1782165746664
+      description: ""
+    children:
+      - url: http://localhost:3000/fidelidade/consentimento
+        name: Consentimento
+        meta:
+          id: req_909d9af5e1044f168359510f37542654
+          created: 1782165750552
+          modified: 1782166068685
+          isPrivate: false
+          description: ""
+          sortKey: -1782165750552
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "finalidade": "programa_fidelidade",
+              "aceito": true
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3ODIxNjMwOTgsImV4cCI6MTc4MzQ1OTA5OCwic3ViIjoiMiJ9.t56UoA7YjfvSs3cXKVMw7e3s6_M1oyYtFlBI7vWzjmE
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/fidelidade/saldo
+        name: Consultar saldo
+        meta:
+          id: req_be379129a4b74d73a2506b10a4da647a
+          created: 1782165880598
+          modified: 1782166255740
+          isPrivate: false
+          description: ""
+          sortKey: -1782165880598
+        method: GET
+        headers:
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3ODIxNjMwOTgsImV4cCI6MTc4MzQ1OTA5OCwic3ViIjoiMiJ9.t56UoA7YjfvSs3cXKVMw7e3s6_M1oyYtFlBI7vWzjmE
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/fidelidade/resgatar
+        name: Resgatar
+        meta:
+          id: req_5eb9434e9a80429d81756536c1830b07
+          created: 1782166036041
+          modified: 1782166178303
+          isPrivate: false
+          description: ""
+          sortKey: -1782166036041
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "pontos": 50
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: Authorization
+            value: Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3ODIxNjMwOTgsImV4cCI6MTc4MzQ1OTA5OCwic3ViIjoiMiJ9.t56UoA7YjfvSs3cXKVMw7e3s6_M1oyYtFlBI7vWzjmE
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_b8702881315356f2c1c7fbcb8ea58135a487b296
+    created: 1781806349055
+    modified: 1781806349055
+environments:
+  name: Base Environment
+  meta:
+    id: env_b8702881315356f2c1c7fbcb8ea58135a487b296
+    created: 1781806349052
+    modified: 1781806349052
+    isPrivate: false

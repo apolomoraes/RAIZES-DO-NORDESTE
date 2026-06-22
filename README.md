@@ -55,8 +55,10 @@ cp .env.example .env
 
 Edite o `.env` com os valores desejados:
 
+```
 PORT=3000
 JWT_SECRET=sua_chave_secreta_aqui
+```
 
 ### 4. Crie o banco de dados e execute as migrations
 
@@ -101,7 +103,7 @@ http://localhost:3000/api-docs
 
 A coleção de testes está disponível no repositório em:
 
-/collection/raizes-do-nordeste.json
+/collection/raizes-do-nordeste.yaml
 
 Importe o arquivo no Insomnia ou Postman para executar os testes.
 
@@ -122,7 +124,9 @@ Importe o arquivo no Insomnia ou Postman para executar os testes.
 
 Todas as rotas protegidas exigem o token JWT no header:
 
+```
 Authorization: Bearer <token>
+```
 
 O token é obtido via `POST /auth/login`.
 
