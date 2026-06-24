@@ -115,6 +115,19 @@ Postman:
 
 Importe o arquivo no Insomnia ou Postman para executar os testes.
 
+**Ordem recomendada de execução:**
+
+1. `POST /auth/login` — faça login e copie o token
+2. `POST /usuarios` — cadastre um novo usuário
+3. `GET /unidades` — liste as unidades disponíveis
+4. `GET /produtos?unidade_id=1` — consulte o cardápio da unidade
+5. `POST /pedidos` — crie um pedido
+6. `POST /pagamento/solicitar` — solicite o pagamento mock
+7. `PATCH /pedidos/:id/status` — atualize o status do pedido
+8. `GET /fidelidade/saldo` — consulte os pontos do cliente
+
+---
+
 ## 🔑 Autenticação nos Testes
 
 Todas as rotas protegidas exigem um token JWT válido. Antes de executar qualquer teste que exija autenticação, siga os passos abaixo:
@@ -165,17 +178,6 @@ Copie o valor do campo `token`.
 
 O token expira em **1 dia**. Se receber erro `401 Token inválido`, repita o processo de login para obter um novo token.
 
-**Ordem recomendada de execução:**
-
-1. `POST /auth/login` — faça login e copie o token
-2. `POST /usuarios` — cadastre um novo usuário
-3. `GET /unidades` — liste as unidades disponíveis
-4. `GET /produtos?unidade_id=1` — consulte o cardápio da unidade
-5. `POST /pedidos` — crie um pedido
-6. `POST /pagamento/solicitar` — solicite o pagamento mock
-7. `PATCH /pedidos/:id/status` — atualize o status do pedido
-8. `GET /fidelidade/saldo` — consulte os pontos do cliente
-
 ---
 
 ## 💡 Utilização
@@ -192,32 +194,20 @@ O token é obtido via `POST /auth/login`.
 
 ## 📁 Estrutura do Projeto
 
+```
 src/
-
 ├── api/
-
-│ ├── controllers/ ← recebem req/res e chamam os services
-
-│ ├── middlewares/ ← autenticação JWT e autorização por role
-
-│ └── routes/ ← definição dos endpoints e documentação Swagger
-
+│   ├── controllers/    ← recebem req/res e chamam os services
+│   ├── middlewares/    ← autenticação JWT e autorização por role
+│   └── routes/         ← definição dos endpoints e documentação Swagger
 ├── application/
-
-│ └── services/ ← regras de negócio e validações
-
+│   └── services/       ← regras de negócio e validações
 ├── infrastructure/
-
-│ └── database/
-
-│ └── knex/
-
-│ ├── migrations/ ← estrutura do banco de dados
-
-│ └── seeds/ ← dados iniciais para testes
-
-├── configs/ ← configurações de JWT e Swagger
-
-├── utils/ ← AppError e utilitários
-
-└── server.js ← entrada da aplicação
+│   └── database/
+│       └── knex/
+│           ├── migrations/   ← estrutura do banco de dados
+│           └── seeds/        ← dados iniciais para testes
+├── configs/            ← configurações de JWT e Swagger
+├── utils/              ← AppError e utilitários
+└── server.js           ← entrada da aplicação
+```
