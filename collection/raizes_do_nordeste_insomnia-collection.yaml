@@ -1,0 +1,1389 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: raizes_do_nordeste
+meta:
+  id: wrk_205bae1e5d224f768d016501d70414df
+  created: 1782244838423
+  modified: 1782244838423
+  description: ""
+collection:
+  - name: raizes_do_nordeste
+    meta:
+      id: fld_1abd399c137f4cc7a882645f087598ab
+      created: 1782244838430
+      modified: 1782244838430
+      sortKey: -1782244832139
+      description: ""
+    children:
+      - name: Auth/Login
+        meta:
+          id: fld_9cac9f20ecca4870b3b0907d6d9df1bc
+          created: 1782244838432
+          modified: 1782244838432
+          sortKey: -1782244832138
+          description: ""
+        children:
+          - url: http://localhost:3000/auth/login
+            name: Login
+            meta:
+              id: req_7a1b5fa9b8b14eadb4fe075f92e4e539
+              created: 1782244838434
+              modified: 1782244922556
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832137
+            method: POST
+            body:
+              mimeType: application/json
+              text: "{\r
+
+                \  \"email\": \"admin@raizes.com\",\r
+
+                \  \"password\": \"123456\"\r
+
+                }"
+            headers:
+              - name: Content-Type
+                value: application/json
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/auth/login
+            name: Error - Login senha errada
+            meta:
+              id: req_f0eb56e0fd4341df91f37e407d5d75e3
+              created: 1782244838439
+              modified: 1782244838439
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832136
+            method: POST
+            body:
+              mimeType: application/json
+              text: '{"email": "admin@raizes.com", "password": "errada"}'
+            headers:
+              - name: Content-Type
+                value: application/json
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/auth/login
+            name: Error - Login sem campos
+            meta:
+              id: req_508b020b333f4c9590af4ef8b145e66d
+              created: 1782244838441
+              modified: 1782244838441
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832135
+            method: POST
+            body:
+              mimeType: application/json
+              text: "{}"
+            headers:
+              - name: Content-Type
+                value: application/json
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Usuarios
+        meta:
+          id: fld_ce78cc97d25e49aaa948b607296ac08f
+          created: 1782244838443
+          modified: 1782244838443
+          sortKey: -1782244832134
+          description: ""
+        children:
+          - url: http://localhost:3000/usuarios
+            name: Criar Usuario
+            meta:
+              id: req_dde42e44897b4ab98ec9096eaba5e369
+              created: 1782244838445
+              modified: 1782244838445
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832133
+            method: POST
+            body:
+              mimeType: application/json
+              text: '{"nome": "Teste", "email": "teste@email.com", "password": "123456",
+                "role": "cliente"}'
+            headers:
+              - name: Content-Type
+                value: application/json
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/usuarios
+            name: Error - Criar usuário email duplicado
+            meta:
+              id: req_c364a9a896d84fddbb0c5296a8d6d85e
+              created: 1782244838447
+              modified: 1782244838447
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832132
+            method: POST
+            body:
+              mimeType: application/json
+              text: '{"nome": "Teste", "email": "teste@email.com", "password": "123456",
+                "role": "cliente"}'
+            headers:
+              - name: Content-Type
+                value: application/json
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/usuarios/1
+            name: Buscar Usuario por ID
+            meta:
+              id: req_3aebf0f7c2144241982b38c70c9004c0
+              created: 1782244838448
+              modified: 1782246041845
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832131
+            method: GET
+            headers:
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/usuarios/1
+            name: Error - Acessar sem token
+            meta:
+              id: req_0555250906b14da78bfc2b27ba5c65fc
+              created: 1782244838450
+              modified: 1782244838450
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832130
+            method: GET
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/usuarios/999
+            name: Error - Buscar usuário inexistente
+            meta:
+              id: req_47d863623c614f5d80199089e4578731
+              created: 1782244838451
+              modified: 1782245018319
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832129
+            method: GET
+            headers:
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/usuarios
+            name: Atualizar Usuario
+            meta:
+              id: req_d1a66c0d83b54c04844049b83f930f03
+              created: 1782244838454
+              modified: 1782245165249
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832128
+            method: PUT
+            body:
+              mimeType: application/json
+              text: '{"nome": "Novo Nome"}'
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Unidades
+        meta:
+          id: fld_76cd758f4b4049e78e84d837fe1dd3c8
+          created: 1782244838456
+          modified: 1782244838456
+          sortKey: -1782244832127
+          description: ""
+        children:
+          - url: http://localhost:3000/unidades
+            name: Criar Unidade
+            meta:
+              id: req_2c1f7c65e71748659bcaf6bbfcc12c5d
+              created: 1782244838458
+              modified: 1782245202882
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832126
+            method: POST
+            body:
+              mimeType: application/json
+              text: "{\r
+
+                \    \"nome\": \"Unidade Teste\", \r
+
+                \    \"endereco\": \"Rua X\", \r
+
+                \    \"cidade\": \"Recife\", \r
+
+                \    \"estado\": \"PE\", \r
+
+                \    \"tipo\": \"completa\"\r
+
+                }"
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/unidades
+            name: Error - Criar unidade sem permissão
+            meta:
+              id: req_2d2be4610f044c5d988f08d943b8760d
+              created: 1782244838460
+              modified: 1782244838460
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832125
+            method: POST
+            body:
+              mimeType: application/json
+              text: "{\r
+
+                \    \"nome\": \"Unidade Teste\", \r
+
+                \    \"endereco\": \"Rua X\", \r
+
+                \    \"cidade\": \"Recife\", \r
+
+                \    \"estado\": \"PE\", \r
+
+                \    \"tipo\": \"completa\"\r
+
+                }"
+            headers:
+              - name: Content-Type
+                value: application/json
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/unidades
+            name: Listar unidades
+            meta:
+              id: req_1aa23dbe37f549e8a09cd2920f87d45b
+              created: 1782244838461
+              modified: 1782245222289
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832124
+            method: GET
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/unidades/1
+            name: Buscar unidade por ID
+            meta:
+              id: req_39a24272dd2b45b9bd4c347afce46d0f
+              created: 1782244838463
+              modified: 1782244838463
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832123
+            method: GET
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/unidades/999
+            name: Error - Buscar unidade inexistente
+            meta:
+              id: req_23a9e3a1e80f440d82e2a391ece1a0aa
+              created: 1782244838464
+              modified: 1782244838464
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832122
+            method: GET
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/unidades/1
+            name: Atualizar Unidade
+            meta:
+              id: req_577ebed9f0854a23b2320cee99443a69
+              created: 1782244838466
+              modified: 1782245250205
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832121
+            method: PUT
+            body:
+              mimeType: application/json
+              text: '{"nome": "Unidade Recife Atualizada"}'
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Produtos
+        meta:
+          id: fld_0db6f85921964a95a3ebf4a0630b737c
+          created: 1782244838468
+          modified: 1782244838468
+          sortKey: -1782244832120
+          description: ""
+        children:
+          - url: http://localhost:3000/produtos
+            name: Criar Produto
+            meta:
+              id: req_e60e3ce4c4f34b2698f72359eb368cb9
+              created: 1782244838470
+              modified: 1782245327442
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832119
+            method: POST
+            body:
+              mimeType: application/json
+              text: '{"nome": "Cuscuz", "preco": 10.00, "categoria": "cuscuz", "unidades":
+                [1]}'
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/produtos
+            name: Error - Criar produto sem campos
+            meta:
+              id: req_5f325f55f75a4c2ca1f98d2fae052690
+              created: 1782244838472
+              modified: 1782244838472
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832118
+            method: POST
+            body:
+              mimeType: application/json
+              text: '{"descricao": "sem nome"}'
+            headers:
+              - name: Content-Type
+                value: application/json
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/produtos/1
+            name: Atualizar produto
+            meta:
+              id: req_5b9267bfc5404510893f3bbff6ba1cec
+              created: 1782244838473
+              modified: 1782245338002
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832117
+            method: PUT
+            body:
+              mimeType: application/json
+              text: '{"preco": 15.00}'
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/produtos/1
+            name: Deletar produto
+            meta:
+              id: req_edd9b00676a34b4e9d1afe80a6e3582a
+              created: 1782244838475
+              modified: 1782245364758
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832116
+            method: DELETE
+            headers:
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/produtos/1
+            name: Error - Deletar produto sem permissão
+            meta:
+              id: req_f519d5e765fe47f086e8a7521445118e
+              created: 1782244838476
+              modified: 1782244838476
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832115
+            method: DELETE
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/produtos
+            name: Listar Produtos
+            meta:
+              id: req_57882b9a7e92401382827967a6fece54
+              created: 1782244838478
+              modified: 1782244838478
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832114
+            method: GET
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/produtos
+            name: Listar produtos por unidade
+            meta:
+              id: req_4c7d8c86ead84f00bcc084f55ae0f761
+              created: 1782244838479
+              modified: 1782244838479
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832113
+            method: GET
+            parameters:
+              - name: unidade_id
+                value: "1"
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/produtos/1
+            name: Buscar produto por ID
+            meta:
+              id: req_37a5a719f01c40d89079caab2e262f61
+              created: 1782244838480
+              modified: 1782244838480
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832112
+            method: GET
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/produtos/999
+            name: Error - Buscar produto inexistente
+            meta:
+              id: req_4fa2132906f24b9fbaedf336ea28ded5
+              created: 1782244838482
+              modified: 1782244838482
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832111
+            method: GET
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Estoque
+        meta:
+          id: fld_7b961074c7c340e0ba699ff2be47fa93
+          created: 1782244838483
+          modified: 1782244838483
+          sortKey: -1782244832110
+          description: ""
+        children:
+          - url: http://localhost:3000/estoque/entrada
+            name: Entrada de estoque
+            meta:
+              id: req_a84d494c366745aca89976c60d4da922
+              created: 1782244838484
+              modified: 1782245411320
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832109
+            method: POST
+            body:
+              mimeType: application/json
+              text: "{\r
+
+                \    \"produto_id\": 1, \r
+
+                \    \"unidade_id\": 1, \r
+
+                \    \"quantidade\": 50, \r
+
+                \    \"motivo\": \"Reposição\"\r
+
+                }"
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/estoque/saida
+            name: Saída de estoque
+            meta:
+              id: req_b3a22e1aad0843939045345e683ec44f
+              created: 1782244838487
+              modified: 1782245443156
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832108
+            method: POST
+            body:
+              mimeType: application/json
+              text: "{\r
+
+                \    \"produto_id\": 1, \r
+
+                \    \"unidade_id\": 1, \r
+
+                \    \"quantidade\": 5\r
+
+                }"
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/estoque/saida
+            name: Error - Saída estoque insuficiente
+            meta:
+              id: req_035eb743fcc849059b7decacd064802a
+              created: 1782244838489
+              modified: 1782245473750
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832107
+            method: POST
+            body:
+              mimeType: application/json
+              text: '{"produto_id": 1, "unidade_id": 1, "quantidade": 9999}'
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/estoque/1
+            name: Consultar estoque por unidade
+            meta:
+              id: req_0b533d23b5634fbf9392ec6b7d5cd7ce
+              created: 1782244838491
+              modified: 1782245451095
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832106
+            method: GET
+            headers:
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/estoque/999
+            name: Error - Consultar estoque unidade inexistente
+            meta:
+              id: req_7cf59f5b62434ee0b7d1278ff20957d4
+              created: 1782244838492
+              modified: 1782245465507
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832105
+            method: GET
+            headers:
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Pedidos
+        meta:
+          id: fld_da28c0d05edb4371a2becd3a45a4b50a
+          created: 1782244838494
+          modified: 1782244838494
+          sortKey: -1782244832104
+          description: ""
+        children:
+          - url: http://localhost:3000/pedidos
+            name: Criar pedido
+            meta:
+              id: req_c2da6ed932354d3b9b562dc60228255c
+              created: 1782244838495
+              modified: 1782245513012
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832103
+            method: POST
+            body:
+              mimeType: application/json
+              text: "{\r
+
+                \    \"unidade_id\": 1, \r
+
+                \    \"canal_pedido\": \"APP\", \r
+
+                \    \"itens\": [{\"produto_id\": 1, \"quantidade\": 2}]\r
+
+                }"
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/pedidos
+            name: Error - Criar pedido produto inexistente
+            meta:
+              id: req_6f81e4ad0a09433fbb6319f57a1884ec
+              created: 1782244838497
+              modified: 1782245521308
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832102
+            method: POST
+            body:
+              mimeType: application/json
+              text: "{\r
+
+                \    \"unidade_id\": 1, \r
+
+                \    \"canal_pedido\": \"WEB\", \r
+
+                \    \"itens\": [{\"produto_id\": 999, \"quantidade\": 2}]\r
+
+                }"
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/pedidos
+            name: Error - Criar pedido estoque insuficiente
+            meta:
+              id: req_ad4669908a194d22b13cfb3c5a383b96
+              created: 1782244838499
+              modified: 1782245532305
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832101
+            method: POST
+            body:
+              mimeType: application/json
+              text: "{\r
+
+                \    \"unidade_id\": 1, \r
+
+                \    \"canal_pedido\": \"TOTEM\", \r
+
+                \    \"itens\": [{\"produto_id\": 1, \r
+
+                \    \"quantidade\": 9999}]\r
+
+                }"
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/pedidos
+            name: Error - Criar pedido canal inválido
+            meta:
+              id: req_1b3bb1d6a50f4bcfa2ff911f64b4f2ab
+              created: 1782244838501
+              modified: 1782245542998
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832100
+            method: POST
+            body:
+              mimeType: application/json
+              text: "{\r
+
+                \    \"unidade_id\": 1, \r
+
+                \    \"canal_pedido\": \"INVALIDO\", \r
+
+                \    \"itens\": [{\"produto_id\": 1, \"quantidade\": 2}]\r
+
+                }"
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/pedidos
+            name: Listar pedidos
+            meta:
+              id: req_71b2399845224b19bdb50cc826131f4b
+              created: 1782244838503
+              modified: 1782245563247
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832099
+            method: GET
+            headers:
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/pedidos
+            name: Error - Listar pedidos sem token
+            meta:
+              id: req_6438e23a43ec42b8a45f05c56d9ea464
+              created: 1782244838505
+              modified: 1782244838505
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832098
+            method: GET
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/pedidos
+            name: Filtrar pedidos por canal
+            meta:
+              id: req_56c99556c4bc4be38044ec5fa18a1ba2
+              created: 1782244838507
+              modified: 1782245577634
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832097
+            method: GET
+            parameters:
+              - name: canal_pedido
+                value: APP
+                disabled: false
+            headers:
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/pedidos/1
+            name: Buscar pedido por ID
+            meta:
+              id: req_df651e7a97484d4098d7da8a442eeffb
+              created: 1782244838509
+              modified: 1782244838509
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832096
+            method: GET
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/pedidos/1/cancelar
+            name: Cancelar pedido
+            meta:
+              id: req_bd94aec8b9bb4d27b6f8ec47e7bb7d74
+              created: 1782244838511
+              modified: 1782245615375
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832095
+            method: PATCH
+            headers:
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/pedidos/1/cancelar
+            name: Error - Cancelar pedido já cancelado
+            meta:
+              id: req_1e1eac5790bf48aab40682b9e1c372a6
+              created: 1782244838512
+              modified: 1782245608928
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832094
+            method: PATCH
+            headers:
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/pedidos/1/status
+            name: Atualizar status do pedido
+            meta:
+              id: req_dce8f78156be4bb0a09f294a4970918e
+              created: 1782244838513
+              modified: 1782245600456
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832093
+            method: PATCH
+            body:
+              mimeType: application/json
+              text: '{"status": "EM_PREPARO"}'
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Pagamento
+        meta:
+          id: fld_280652bc8d234d3ea8bf9cadff3ca8db
+          created: 1782244838515
+          modified: 1782244838515
+          sortKey: -1782244832092
+          description: ""
+        children:
+          - url: http://localhost:3000/pagamento/solicitar
+            name: Solicitar pagamento
+            meta:
+              id: req_1928b355e7324385ba58a9369775e03d
+              created: 1782244838516
+              modified: 1782245639872
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832091
+            method: POST
+            body:
+              mimeType: application/json
+              text: '{"pedido_id": 2, "forma_pagamento": "PIX"}'
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/pagamento/solicitar
+            name: Error - Solicitar pagamento pedido inexistente
+            meta:
+              id: req_902a82416c1846a9b16a40324317d1de
+              created: 1782244838518
+              modified: 1782245648303
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832090
+            method: POST
+            body:
+              mimeType: application/json
+              text: '{"pedido_id": 999, "forma_pagamento": "PIX"}'
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/pagamento/solicitar
+            name: Error - Solicitar pagamento forma inválida
+            meta:
+              id: req_889b37560c90438080012d2be5fe99ac
+              created: 1782244838521
+              modified: 1782245656940
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832089
+            method: POST
+            body:
+              mimeType: application/json
+              text: '{"pedido_id": 2, "forma_pagamento": "BOLETO"}'
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/pagamento/1
+            name: Consultar pagamento do pedido
+            meta:
+              id: req_4e32b37bbba84435a5cc7b488ca4f2bd
+              created: 1782244838523
+              modified: 1782245663760
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832088
+            method: GET
+            headers:
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Fidelidade
+        meta:
+          id: fld_899699b6a60341d9887330bf74ce68d7
+          created: 1782244838524
+          modified: 1782244838524
+          sortKey: -1782244832087
+          description: ""
+        children:
+          - url: http://localhost:3000/fidelidade/consentimento
+            name: Registrar consentimento
+            meta:
+              id: req_04a52ccd47144c2fa3f92fd51e7b3f10
+              created: 1782244838525
+              modified: 1782245687630
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832086
+            method: POST
+            body:
+              mimeType: application/json
+              text: '{"finalidade": "programa_fidelidade", "aceito": true}'
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/fidelidade/resgatar
+            name: Resgatar pontos
+            meta:
+              id: req_9071b9b6d84349a7afd655cf34444009
+              created: 1782244838527
+              modified: 1782245694582
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832085
+            method: POST
+            body:
+              mimeType: application/json
+              text: '{"pontos": 100}'
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/fidelidade/resgatar
+            name: Error - Resgatar saldo insuficiente
+            meta:
+              id: req_f5d7214d39fe4daa9044abd00f48e5bd
+              created: 1782244838528
+              modified: 1782245702785
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832084
+            method: POST
+            body:
+              mimeType: application/json
+              text: '{"pontos": 9999}'
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/fidelidade/resgatar
+            name: Error - Resgatar abaixo do mínimo
+            meta:
+              id: req_751bd78da5bb4240bdd0feddb579ac21
+              created: 1782244838529
+              modified: 1782245709234
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832083
+            method: POST
+            body:
+              mimeType: application/json
+              text: '{"pontos": 50}'
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/fidelidade/saldo
+            name: Consultar saldo
+            meta:
+              id: req_8672620af4524b11a6cd9fc4f8807da6
+              created: 1782244838531
+              modified: 1782245716172
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832082
+            method: GET
+            headers:
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: http://localhost:3000/fidelidade/historico
+            name: Consultar histórico
+            meta:
+              id: req_6a1892550d3e4c8aa8ea41df56c3e2ba
+              created: 1782244838532
+              modified: 1782245722531
+              isPrivate: false
+              description: ""
+              sortKey: -1782244832081
+            method: GET
+            headers:
+              - name: Authorization
+                value: Bearer <token>
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_3980e89a80baea72f63853c3190000621e0b3e0e
+    created: 1782244838683
+    modified: 1782244838683
+environments:
+  name: Base Environment
+  meta:
+    id: env_3980e89a80baea72f63853c3190000621e0b3e0e
+    created: 1782244838534
+    modified: 1782244838534
+    isPrivate: false
