@@ -103,9 +103,67 @@ http://localhost:3000/api-docs
 
 A coleção de testes está disponível no repositório em:
 
-/collection/raizes-do-nordeste.yaml
+```
+Insomnia:
+/collection/raizes_do_nordeste_insomnia-collection.yaml
+```
+
+```
+Postman:
+/collection/raizes_do_nordeste.postman_collection.json
+```
 
 Importe o arquivo no Insomnia ou Postman para executar os testes.
+
+## 🔑 Autenticação nos Testes
+
+Todas as rotas protegidas exigem um token JWT válido. Antes de executar qualquer teste que exija autenticação, siga os passos abaixo:
+
+### 1. Faça login
+
+Execute o request **Auth/Login** com um dos usuários do seed:
+
+```json
+POST /auth/login
+{
+  "email": "admin@raizes.com",
+  "password": "123456"
+}
+```
+
+### 2. Copie o token retornado
+
+A resposta será algo como:
+
+```json
+{
+  "usuario": { ... },
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+```
+
+Copie o valor do campo `token`.
+
+### 3. Configure o token
+
+**No Postman:**
+
+- Abra qualquer request protegido
+- Vá em **Authorization**
+- Selecione o tipo **Bearer Token**
+- Cole o token no campo **Token**
+- Salve
+
+**No Insomnia:**
+
+- Abra qualquer request protegido
+- No campo **Authorization → Bearer Token**
+- Substitua `<token>` pelo token copiado
+- Repita para os demais requests protegidos
+
+### ⚠️ Atenção
+
+O token expira em **1 dia**. Se receber erro `401 Token inválido`, repita o processo de login para obter um novo token.
 
 **Ordem recomendada de execução:**
 
