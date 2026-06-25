@@ -35,8 +35,8 @@ API REST desenvolvida como projeto de conclusão de curso (Projeto Multidiscipli
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/raizesdonordeste.git
-cd raizesdonordeste
+git clone https://github.com/apolomoraes/RAIZES-DO-NORDESTE.git
+cd RAIZES-DO-NORDESTE
 ```
 
 ### 2. Instale as dependências
